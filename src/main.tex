@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{./utils/conditionalSections}
+
+\input{../config.tex}
+
+\begin{document}
+
+\cs{section1}{
+  Section 1 Content
+
+  \cs{section11}{
+    Section 11 Content
+  }
+
+  \cs{section12}{
+    Section 12 Content
+  }
+}
+
+\newcounter{itemcount}%
+
+\begin{itemize}
+\forlistloop{\stepcounter{itemcount}\item}{\sectionlist}
+\end{itemize}
+
+Total: \number\value{itemcount} items
+
+\end{document}
