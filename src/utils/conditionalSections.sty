@@ -1,12 +1,28 @@
 \usepackage{etoolbox}
 \usepackage{catchfile}
 
+\newtoggle{includeSection}
+
 \newcommand{\preparelist}[1]{
   \renewcommand{\do}[1]{\listgadd{\sectionlist}{##1}}
   \docsvlist{#1}
 }
 
-% Conditional section command
 \newcommand{\cs}[2]{
-  \ifinlist{#1}{\sectionlist}{#2}{}
+
+  \togglefalse{includeSection}
+
+  \ifdef{\includeAllSections}
+    {
+      \toggletrue{includeSection}
+    }
+    {
+      \ifinlist{#1}{\sectionlist}
+        {\toggletrue{includeSection}}
+        {}
+    }
+
+  \iftoggle{includeSection}
+    {#2}
+    {}
 }
