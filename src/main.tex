@@ -1,28 +1,16 @@
-\documentclass{article}
-\usepackage{./utils/conditionalSections}
+% \documentclass[11pt, a4paper]{../russell}
+% \documentclass[11pt, a4paper]{../russell_copy}
+% \documentclass[11pt, a4paper]{./style/russell/russell}
+% \documentclass[11pt, a4paper]{../awesome-cv}
+\documentclass[11pt, a4paper]{./style/awesome-cv/awesome-cv}
 
-\input{../config.tex}
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
 
-\begin{document}
+% \colorlet{russell}{russell-black}
+\colorlet{awesome}{awesome-darknight}
 
-\cs{section1}{
-  Section 1 Content
+\setbool{acvSectionColorHighlight}{false}
 
-  \cs{section1.1}{
-    Section 11 Content
-  }
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
-  \cs{section1.2}{
-    Section 12 Content
-  }
-}
-
-\newcounter{itemcount}%
-
-\begin{itemize}
-\forlistloop{\stepcounter{itemcount}\item}{\sectionlist}
-\end{itemize}
-
-Total: \number\value{itemcount} items
-
-\end{document}
+\input{../generated.tex}

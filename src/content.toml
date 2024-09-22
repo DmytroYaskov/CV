@@ -1,0 +1,41 @@
+# Example configuration file
+
+[personal_info] # Name and atleast one concact info is required in order to avoid errors
+name = "Dmytro Yaskov"
+mobile = "+380000000000"
+email = "dmytro.yaskov@example.com"
+github = "dmytroyaskov"
+linkedin = "dmytroyaskov"
+
+[education.ms]
+degree = "Master's degree"
+area = "Computer Science"
+institution = "National University of Radioelectronics"
+period = [2016-09-01, 2018-05-31]
+
+[education.bs]
+degree = "Bachelor's degree"
+area_of_study = "Computer Science"
+institution = "National University of Radioelectronics"
+period = [2012-09-01, 2016-05-31]
+
+[experience.software]
+position = "Software Engineer"
+company = "Tech Solutions Ltd."
+location = "Kyiv, Ukraine"
+period = [2018-06-01, 2023-05-31]
+summary = """
+Led the development of several critical modules, improving system performance by 20%.
+"""
+responsibilities = [
+    "Designed and implemented user interfaces for client projects",
+    "Collaborated with a team of developers to integrate new features into existing software"
+]
+
+[language.eng]
+name = "English"
+level = "Advanced"
+
+[language.ukr]
+name = "Ukrainian"
+level = "Native"
